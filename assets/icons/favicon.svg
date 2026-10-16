@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="7" fill="#0A0A0B"/>
+  <rect x="1" y="1" width="30" height="30" rx="6.5" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="16" y="22" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" fill="#A8B4C8" letter-spacing="-0.5">PT</text>
+</svg>

@@ -1,0 +1,454 @@
+{
+  "_comment": "SINGLE SOURCE OF TRUTH — Edit ONLY this file to update all portfolio content.",
+
+  "meta": {
+    "siteTitle": "Prionto Hira Deep — CSE, Builder, Visual Creator",
+    "shortTitle": "Prionto Hira Deep",
+    "description": "Personal portfolio of Prionto Hira Deep — Computer Science & Engineering student, competitive programmer, robotics enthusiast, and visual storyteller based in Chittagong, Bangladesh.",
+    "keywords": ["portfolio", "CSE", "competitive programming", "Codeforces", "robotics", "photography", "Bangladesh", "Chittagong"],
+    "ogImage": "/assets/images/avatar.jpg",
+    "canonicalUrl": "https://priontohira.netlify.app",
+    "resumePath": "/assets/resume/resume.pdf",
+    "resumeLabel": "Download Résumé",
+    "themeColor": "#0A0A0B",
+    "favicon": "/assets/icons/favicon.svg"
+  },
+
+  "identity": {
+    "name": "Prionto Hira Deep",
+    "nameBreak": ["Prionto", "Hira", "Deep"],
+    "avatar": "/assets/images/avatar.jpg",
+    "avatarAlt": "Prionto Hira Deep — portrait",
+    "taglines": [
+      "CSE Student @ CUET",
+      "Competitive Programmer",
+      "Robotics & Embedded Systems Builder",
+      "Visual Storyteller",
+      "Open Source Contributor"
+    ],
+    "typingSpeed": 75,
+    "deletingSpeed": 40,
+    "pauseDelay": 2200,
+    "statusBadge": {
+      "state": "active",
+      "label": "Open to Internships & Collabs",
+      "pulse": true
+    },
+    "bio": "I'm a Computer Science & Engineering student at CUET with a deep passion for algorithms, embedded systems, and visual storytelling. I solve problems on Codeforces, build robots that actually move, and photograph light the way a compiler reads source — precisely.",
+    "bioHighlight": "algorithms, embedded systems, and visual storytelling"
+  },
+
+  "social": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/prionto-deep",
+      "icon": "github",
+      "title": "View source code and open source contributions"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/prionto-hira-deep-348624231/",
+      "icon": "linkedin",
+      "title": "Professional profile and experience"
+    },
+    {
+      "id": "codeforces",
+      "label": "Codeforces",
+      "url": "https://codeforces.com/profile/Prionyx",
+      "icon": "codeforces",
+      "title": "Competitive programming profile"
+    },
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": "https://facebook.com/priontodeep",
+      "icon": "facebook",
+      "title": "Facebook profile"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com/priontodeep/",
+      "icon": "instagram",
+      "title": "Photography and visual work"
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "url": "mailto:chaningdeep@gmail.com ?subject=Portfolio%20Inquiry&body=Hi%20Priyanto,%0D%0A%0D%0AI%20came%20across%20your%20portfolio...",
+      "icon": "email",
+      "title": "Send a direct email"
+    }
+  ],
+
+  "github": {
+    "username": "priontohira",
+    "_note": "GitHub username used by api.js to fetch repos, stars, and streak data from the public API."
+  },
+
+  "codeforces": {
+    "handle": "priontohira",
+    "_note": "Codeforces handle used by api.js to fetch rating, max rating, solved count, and recent contest history."
+  },
+
+  "skills": [
+    {
+      "category": "Languages",
+      "icon": "code",
+      "tags": ["C++", "Python"]
+    },
+    {
+      "category": "Algorithms & CP",
+      "icon": "cpu",
+      "tags": ["Graph Theory", "DP", "Segment Trees", "BFS/DFS", "Greedy", "Binary Search", "Number Theory"]
+    },
+    {
+      "category": "Hardware & Embedded",
+      "icon": "chip",
+      "tags": ["Arduino", "Raspberry Pi", "ESP32", "KiCad", "PWM Control", "I2C/SPI", "RTOS"]
+    },
+    {
+      "category": "Web & Tools",
+      "icon": "globe",
+      "tags": ["HTML5", "CSS3", "Vanilla JS", "Git", "Linux", "Netlify", "Figma"]
+    },
+    {
+      "category": "Creative",
+      "icon": "camera",
+      "tags": ["Photography", "Adobe Lightroom", "Composition", "Street Photography", "Long Exposure"]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "proj-001",
+      "title": "Graph Pathfinder Visualizer",
+      "category": "Software & Algorithms",
+      "tags": ["C++", "Algorithm", "Visualization", "BFS", "Dijkstra"],
+      "description": "An interactive browser-based visualizer for BFS, DFS, Dijkstra, and A* on configurable weighted grids. Step-through mode lets you watch the frontier expand in real time.",
+      "thumbnail": "/assets/images/projects/graph-viz.jpg",
+      "thumbnailAlt": "Graph pathfinding visualizer screenshot",
+      "status": "Shipped",
+      "year": 2025,
+      "links": {
+        "live": "https://graph-viz.priontohira.netlify.app",
+        "github": "https://github.com/prionto-deep/graph-pathfinder-viz",
+        "demo": null
+      },
+      "featured": true,
+      "highlights": ["Handles graphs up to 10,000 nodes", "60fps canvas rendering", "Adjustable obstacle density"]
+    },
+    {
+      "id": "proj-002",
+      "title": "Autonomous Line-Following Robot",
+      "category": "Hardware & Robotics",
+      "tags": ["Arduino", "PID Control", "C++", "Motor Driver", "IR Sensors"],
+      "description": "A 4-wheel differential-drive robot with PID-tuned IR sensor array for competitive maze navigation. Achieved sub-3-second lap times on a 2m×2m track at inter-university contest.",
+      "thumbnail": "/assets/images/projects/line-bot.jpg",
+      "thumbnailAlt": "Line following robot on track",
+      "status": "Shipped",
+      "year": 2024,
+      "links": {
+        "live": null,
+        "github": "https://github.com/prionto-deep/line-follower-pid",
+        "demo": "https://youtube.com/watch?v=example"
+      },
+      "featured": true,
+      "highlights": ["PID constant auto-tuning", "Bluetooth remote override", "3D-printed chassis"]
+    },
+    {
+      "id": "proj-003",
+      "title": "CP Template Library",
+      "category": "Software & Algorithms",
+      "tags": ["C++", "Competitive Programming", "Data Structures", "Templates"],
+      "description": "A battle-tested competitive programming template library with 80+ implementations — Fenwick trees, sparse tables, modular arithmetic, geometry primitives — all tested against Codeforces judges.",
+      "thumbnail": "/assets/images/projects/cp-lib.jpg",
+      "thumbnailAlt": "Code editor with CP library code",
+      "status": "Shipped",
+      "year": 2025,
+      "links": {
+        "live": null,
+        "github": "https://github.com/prionto-deep/cp-template-library",
+        "demo": null
+      },
+      "featured": false,
+      "highlights": ["80+ verified implementations", "Organized by topic", "README with complexity annotations"]
+    },
+    {
+      "id": "proj-004",
+      "title": "Chittagong Light — Street Photography Series",
+      "category": "Photography & Creative Media",
+      "tags": ["Photography", "Street", "Documentary", "Lightroom"],
+      "description": "A 40-image documentary series capturing the morning ferry ghats, rickshaw pullers at golden hour, and monsoon flooding on the streets of Chittagong. Shot on mirrorless, edited in Lightroom.",
+      "thumbnail": "/assets/images/projects/chittagong-light.jpg",
+      "thumbnailAlt": "Ferry ghat at golden hour, Chittagong",
+      "status": "Shipped",
+      "year": 2025,
+      "links": {
+        "live": "https://flickr.com/priontohira",
+        "github": null,
+        "demo": null
+      },
+      "featured": true,
+      "highlights": ["40 curated images", "Featured in CUET Photography Club exhibit", "Shot entirely in Chittagong"]
+    },
+    {
+      "id": "proj-005",
+      "title": "Smart Room IoT Dashboard",
+      "category": "Hardware & Robotics",
+      "tags": ["ESP32", "MQTT", "Node-RED", "IoT", "Sensors"],
+      "description": "ESP32-based room automation system with temperature, humidity, and PIR motion sensing. Real-time MQTT data stream visualized on a self-hosted Node-RED dashboard over local Wi-Fi.",
+      "thumbnail": "/assets/images/projects/iot-room.jpg",
+      "thumbnailAlt": "IoT dashboard showing room sensor data",
+      "status": "Shipped",
+      "year": 2024,
+      "links": {
+        "live": null,
+        "github": "https://github.com/prionto-deep/smart-room-esp32",
+        "demo": null
+      },
+      "featured": false,
+      "highlights": ["Sub-500ms sensor latency", "OTA firmware updates", "Persistent data to SQLite"]
+    },
+    {
+      "id": "proj-006",
+      "title": "Long Exposure Night Sky — Shyamnagar Series",
+      "category": "Photography & Creative Media",
+      "tags": ["Photography", "Astrophotography", "Long Exposure", "Lightroom"],
+      "description": "Long-exposure astrophotography from Shyamnagar's Sundarbans buffer zone. 18 images capturing star trails and Milky Way arcs with a 25-minute composite technique.",
+      "thumbnail": "/assets/images/projects/night-sky.jpg",
+      "thumbnailAlt": "Star trails over the Sundarbans buffer zone",
+      "status": "Shipped",
+      "year": 2024,
+      "links": {
+        "live": "https://500px.com/priontohira",
+        "github": null,
+        "demo": null
+      },
+      "featured": false,
+      "highlights": ["25-min composites", "No light pollution correction needed", "Manual tracking mount"]
+    },
+    {
+      "id": "proj-007",
+      "title": "Mini Compiler — Subset C to x86",
+      "category": "Software & Algorithms",
+      "tags": ["C", "Compiler", "Lexer", "Parser", "Assembly", "Systems"],
+      "description": "Academic compiler project implementing a full lexer → parser → semantic analyzer → x86 code generator pipeline for a subset of C. Supports if/else, while loops, functions, and arrays.",
+      "thumbnail": "/assets/images/projects/compiler.jpg",
+      "thumbnailAlt": "Compiler pipeline architecture diagram",
+      "status": "Shipped",
+      "year": 2025,
+      "links": {
+        "live": null,
+        "github": "https://github.com/prionto-deep/mini-compiler-c",
+        "demo": null
+      },
+      "featured": false,
+      "highlights": ["Full 4-phase pipeline", "800+ lines of hand-written x86", "Tested on 50+ programs"]
+    },
+    {
+      "id": "proj-008",
+      "title": "Delta Robot — 3-DOF Pick & Place",
+      "category": "Hardware & Robotics",
+      "tags": ["Raspberry Pi", "Kinematics", "Servo", "Python", "Robotics"],
+      "description": "A 3-DOF parallel delta robot with inverse kinematics solver running on Raspberry Pi 4. Capable of high-speed pick-and-place operations at 2 cycles/second. Full CAD model in Fusion 360.",
+      "thumbnail": "/assets/images/projects/delta-robot.jpg",
+      "thumbnailAlt": "Delta robot mid-movement on workbench",
+      "status": "Prototyping",
+      "year": 2025,
+      "links": {
+        "live": null,
+        "github": "https://github.com/prionto-deep/delta-robot-ik",
+        "demo": "https://youtube.com/watch?v=example2"
+      },
+      "featured": true,
+      "highlights": ["Custom IK solver in Python", "2 cycles/sec at 50mm accuracy", "Fusion 360 full model"]
+    }
+  ],
+
+  "projectCategories": [
+    { "id": "all", "label": "All" },
+    { "id": "Software & Algorithms", "label": "Software & Algorithms" },
+    { "id": "Hardware & Robotics", "label": "Hardware & Robotics" },
+    { "id": "Photography & Creative Media", "label": "Photography & Creative Media" }
+  ],
+
+  "ideas": [
+    {
+      "id": "idea-001",
+      "title": "Distributed Sudoku Solver over WebSockets",
+      "status": "Prototyping",
+      "statusColor": "amber",
+      "description": "Shard a constraint propagation Sudoku solver across N browser tabs using BroadcastChannel API — no server, pure client-side distributed computing demo.",
+      "tags": ["Distributed Systems", "JavaScript", "BroadcastChannel", "Algorithms"],
+      "inspiration": "After reading the Dancing Links paper — wanted to see if web tabs could act as worker nodes.",
+      "estimatedComplexity": "Medium",
+      "targetDate": "Q1 2026"
+    },
+    {
+      "id": "idea-002",
+      "title": "Haptic Braille Reader — Solenoid Array",
+      "status": "Concept",
+      "statusColor": "sky",
+      "description": "A 4×2 solenoid matrix driven by an ESP32 that converts BMP text images into refreshable Braille cells for a low-cost assistive device.",
+      "tags": ["Assistive Tech", "ESP32", "Hardware", "Accessibility"],
+      "inspiration": "Observed visually impaired students at CUET using expensive commercial readers.",
+      "estimatedComplexity": "High",
+      "targetDate": "Q3 2026"
+    },
+    {
+      "id": "idea-003",
+      "title": "Algorithmic Composition Engine",
+      "status": "Concept",
+      "statusColor": "sky",
+      "description": "Generate non-repetitive lo-fi beats using Markov chains trained on CC0 MIDI datasets, rendered in-browser with the Web Audio API — no ML framework needed.",
+      "tags": ["Music", "Markov Chains", "Web Audio API", "JavaScript"],
+      "inspiration": "Realized most lo-fi generators are just YouTube streams — wanted something actually generative.",
+      "estimatedComplexity": "Medium",
+      "targetDate": "Q2 2026"
+    },
+    {
+      "id": "idea-004",
+      "title": "Open Hardware Air Quality Monitor",
+      "status": "Prototyping",
+      "statusColor": "amber",
+      "description": "PM2.5 + CO2 + VOC sensor node built on a custom KiCad PCB with an E-ink display and LoRa uplink for mesh coverage across a university campus.",
+      "tags": ["KiCad", "Hardware", "LoRa", "Environmental", "PCB Design"],
+      "inspiration": "Air quality data around CUET campus is essentially non-existent.",
+      "estimatedComplexity": "High",
+      "targetDate": "Q4 2026"
+    },
+    {
+      "id": "idea-005",
+      "title": "Photogrammetry Pipeline for Sundarbans Topology",
+      "status": "Concept",
+      "statusColor": "sky",
+      "description": "Use drone photogrammetry (OpenDroneMap) to build centimeter-accuracy DEMs of Sundarban riverine erosion zones — open data for climate researchers.",
+      "tags": ["Photogrammetry", "OpenDroneMap", "GIS", "Climate", "Drone"],
+      "inspiration": "Saw a tidal erosion timelapse and realized nobody has open topographic data for this area.",
+      "estimatedComplexity": "Very High",
+      "targetDate": "2027"
+    }
+  ],
+
+  "timeline": [
+    {
+      "id": "tl-001",
+      "type": "education",
+      "icon": "university",
+      "year": "2023 — Present",
+      "title": "B.Sc. in Computer Science & Engineering",
+      "institution": "Chittagong University of Engineering & Technology (CUET)",
+      "location": "Chittagong, Bangladesh",
+      "description": "Studying data structures, algorithms, computer architecture, operating systems, computer networks, digital electronics, and embedded systems. Active member of CUET Programming Club and Robotics Club.",
+      "tags": ["CSE", "CUET", "Algorithms", "Robotics Club"],
+      "current": true
+    },
+    {
+      "id": "tl-002",
+      "type": "achievement",
+      "icon": "trophy",
+      "year": "2024",
+      "title": "Inter-University Robotics Contest — 2nd Place",
+      "institution": "Regional Robotics Competition",
+      "location": "Dhaka, Bangladesh",
+      "description": "Line-follower category. Built a PID-controlled robot that completed the maze in under 3 seconds. Competed against 24 university teams.",
+      "tags": ["Robotics", "PID", "Competition"],
+      "current": false
+    },
+    {
+      "id": "tl-003",
+      "type": "milestone",
+      "icon": "code",
+      "year": "2024",
+      "title": "Codeforces — Specialist Rank",
+      "institution": "Codeforces",
+      "location": "Online",
+      "description": "Reached Specialist rank (rated 1400+) after consistent contest participation. Solved 500+ problems across Codeforces, Atcoder, and CSES problem sets.",
+      "tags": ["Competitive Programming", "Codeforces", "Algorithms"],
+      "current": false
+    },
+    {
+      "id": "tl-004",
+      "type": "education",
+      "icon": "school",
+      "year": "2023 — 2024",
+      "title": "Higher Secondary Certificate (HSC)",
+      "institution": "Khulna Public College",
+      "location": "Khulna, Bangladesh",
+      "description": "Science group. GPA 5.00/5.00. Science Olympiad participant at district level. Built first Arduino project — an automated plant watering system.",
+      "tags": ["HSC", "Science", "Science Olympiad", "Arduino"],
+      "current": false
+    },
+    {
+      "id": "tl-005",
+      "type": "milestone",
+      "icon": "camera",
+      "year": "2023",
+      "title": "First Photography Exhibition — CUET Photography Club",
+      "institution": "CUET Photography Club",
+      "location": "Chittagong, Bangladesh",
+      "description": "Exhibited 6 prints from the Chittagong riverfront documentary series. First formal recognition of visual work alongside engineering studies.",
+      "tags": ["Photography", "Exhibition", "CUET"],
+      "current": false
+    },
+    {
+      "id": "tl-006",
+      "type": "education",
+      "icon": "school",
+      "year": "2021 — 2022",
+      "title": "Secondary School Certificate (SSC)",
+      "institution": "Phultala Re-union School and College",
+      "location": "Khulna, Bangladesh",
+      "description": "Science group. GPA 5.00/5.00. Mathematics Olympiad participant, division winner at Khulna zone. Got first exposure to programming through Logo and Pascal.",
+      "tags": ["SSC", "Science", "Math Olympiad"],
+      "current": false
+    }
+  ],
+
+  "location": {
+    "city": "Khulna",
+    "country": "Bangladesh",
+    "countryCode": "BD",
+    "label": "Khulna, Bangladesh",
+    "coordinates": {
+      "lat": 22.8456,
+      "lng": 89.5403
+    },
+    "timezone": "Asia/Dhaka",
+    "utcOffset": "+06:00",
+    "utcLabel": "UTC+6",
+    "mapZoom": 13,
+    "pinLabel": "Home base",
+    "description": "Born and studying in Khulna — the river city at the edge of the Sundarbans mangrove forest, southwestern Bangladesh."
+  },
+
+  "contact": {
+    "netlifyFormName": "portfolio-contact",
+    "displayEmail": "prion@example.com",
+    "heading": "Let's Build Something",
+    "subheading": "Open for internship discussions, collaboration proposals, research ideas, or just saying hi.",
+    "fields": [
+      { "name": "name",    "label": "Your name",        "type": "text",     "required": true,  "placeholder": "Ada Lovelace" },
+      { "name": "email",   "label": "Your email",       "type": "email",    "required": true,  "placeholder": "ada@example.com" },
+      { "name": "subject", "label": "Subject",          "type": "text",     "required": false, "placeholder": "Internship / Collab / Hi" },
+      { "name": "message", "label": "Message",          "type": "textarea", "required": true,  "placeholder": "What are you building?" }
+    ],
+    "submitLabel": "Send Message",
+    "successMessage": "Message received — I'll get back to you within 48 hours.",
+    "errorMessage": "Something went wrong. You can also reach me directly at the email above."
+  },
+
+  "footer": {
+    "builtWith": "Vanilla HTML, CSS & JS",
+    "sourceLabel": "View Source",
+    "sourceUrl": "https://github.com/prionto-deep/portfolio",
+    "copyright": "© 2025 Prionto Hira Deep"
+  }
+}
+^X
+
+
+
