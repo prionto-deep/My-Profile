@@ -335,10 +335,46 @@
 
   "timeline": [
     {
+      "id": "tl-003",
+      "type": "milestone",
+      "icon": "code",
+      "year": "2026",
+      "title": "Codeforces — newbie",
+      "institution": "Codeforces",
+      "location": "Online",
+      "description": "Reached newbie rank (rated 800+) after consistent contest participation. Solved 100+ problems across Codeforces, Atcoder, and CSES problem sets.",
+      "tags": ["Competitive Programming", "Codeforces", "Algorithms"],
+      "current": false
+    },
+    {
+      "id": "tl-002",
+      "type": "achievement",
+      "icon": "trophy",
+      "year": "2025",
+      "title": "National Inter-College Science Fair — 2nd Place",
+      "institution": "Khulna Public College",
+      "location": "Khulna, Bangladesh",
+      "description": "Created an electron powered air-cooler. It was featured in a science fair and won 2nd place against 50+ college teams.",
+      "tags": ["Robotics", "PID", "Competition"],
+      "current": false
+    },
+    {
+      "id": "tl-005",
+      "type": "milestone",
+      "icon": "trophy",
+      "year": "2023",
+      "title": "National Level Talent Searching Competition - 1st Place",
+      "institution": "Bangladesh Scouts",
+      "location": "Dhaka, Bangladesh",
+      "description": "Placed first in the whole district and became a participant in the national level competition.",
+      "tags": ["Science", "Talent Searching Competition", "Dhaka"],
+      "current": false
+    },
+    {
       "id": "tl-001",
       "type": "education",
       "icon": "university",
-      "year": "2023 — Present",
+      "year": "2025 — Present",
       "title": "B.Sc. in Computer Science & Engineering",
       "institution": "Chittagong University of Engineering & Technology (CUET)",
       "location": "Chittagong, Bangladesh",
@@ -347,51 +383,15 @@
       "current": true
     },
     {
-      "id": "tl-002",
-      "type": "achievement",
-      "icon": "trophy",
-      "year": "2024",
-      "title": "Inter-University Robotics Contest — 2nd Place",
-      "institution": "Regional Robotics Competition",
-      "location": "Dhaka, Bangladesh",
-      "description": "Line-follower category. Built a PID-controlled robot that completed the maze in under 3 seconds. Competed against 24 university teams.",
-      "tags": ["Robotics", "PID", "Competition"],
-      "current": false
-    },
-    {
-      "id": "tl-003",
-      "type": "milestone",
-      "icon": "code",
-      "year": "2024",
-      "title": "Codeforces — Specialist Rank",
-      "institution": "Codeforces",
-      "location": "Online",
-      "description": "Reached Specialist rank (rated 1400+) after consistent contest participation. Solved 500+ problems across Codeforces, Atcoder, and CSES problem sets.",
-      "tags": ["Competitive Programming", "Codeforces", "Algorithms"],
-      "current": false
-    },
-    {
       "id": "tl-004",
       "type": "education",
-      "icon": "school",
+      "icon": "college",
       "year": "2023 — 2024",
       "title": "Higher Secondary Certificate (HSC)",
       "institution": "Khulna Public College",
       "location": "Khulna, Bangladesh",
       "description": "Science group. GPA 5.00/5.00. Science Olympiad participant at district level. Built first Arduino project — an automated plant watering system.",
       "tags": ["HSC", "Science", "Science Olympiad", "Arduino"],
-      "current": false
-    },
-    {
-      "id": "tl-005",
-      "type": "milestone",
-      "icon": "camera",
-      "year": "2023",
-      "title": "First Photography Exhibition — CUET Photography Club",
-      "institution": "CUET Photography Club",
-      "location": "Chittagong, Bangladesh",
-      "description": "Exhibited 6 prints from the Chittagong riverfront documentary series. First formal recognition of visual work alongside engineering studies.",
-      "tags": ["Photography", "Exhibition", "CUET"],
       "current": false
     },
     {
