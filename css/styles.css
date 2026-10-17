@@ -332,6 +332,13 @@ h1, h2, h3, h4 {
   color: var(--text-accent);
 }
 
+.nav-logo-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   gap: var(--sp-1);
@@ -1771,7 +1778,7 @@ h1, h2, h3, h4 {
   }
   .bento-card--identity { grid-column: 1 / 3; }
   .bento-card--social   { grid-column: 1 / 2; }
-  .bento-card--skills   { grid-column: 2 / 3; }
+  .bento-card--skills   { grid-column: 1 / 3; }
 
   .bento-grid--projects {
     grid-template-columns: repeat(2, 1fr);

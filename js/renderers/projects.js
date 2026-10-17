@@ -106,6 +106,7 @@ function openModal(project) {
 function closeModal() {
   const overlay = document.getElementById('project-modal');
   if (!overlay) return;
+  overlay.classList.remove('open');
   overlay.hidden = true;
   document.body.style.overflow = '';
   currentProject = null;

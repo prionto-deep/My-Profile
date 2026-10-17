@@ -71,12 +71,16 @@ export function renderHero(profile) {
 
   // Status badge
   const badgeEl = document.getElementById('hero-status-badge');
-  if (badgeEl && identity.statusBadge) {
-    const { label, pulse } = identity.statusBadge;
-    badgeEl.innerHTML = `
-      <span class="status-dot ${pulse ? 'pulse' : ''}" aria-hidden="true"></span>
-      <span class="status-label">${label}</span>
-    `;
+  if (badgeEl) {
+    if (identity.statusBadge) {
+      const { label, pulse } = identity.statusBadge;
+      badgeEl.innerHTML = `
+        <span class="status-dot ${pulse ? 'pulse' : ''}" aria-hidden="true"></span>
+        <span class="status-label">${label}</span>
+      `;
+    } else {
+      badgeEl.remove();
+    }
   }
 
   // Name

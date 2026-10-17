@@ -132,6 +132,11 @@ function applySEOMeta(meta) {
   if (ogDesc && meta.description) ogDesc.content = meta.description;
   const canonical = document.querySelector('link[rel="canonical"]');
   if (canonical && meta.canonicalUrl) canonical.href = meta.canonicalUrl;
+  const favicon = document.querySelector('link[rel="icon"]');
+  if (favicon && meta.favicon) {
+    favicon.href = meta.favicon;
+    favicon.type = 'image/svg+xml';
+  }
 }
 
 // ── Boot ───────────────────────────────────────────────────────

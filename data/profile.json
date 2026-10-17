@@ -6,18 +6,18 @@
     "shortTitle": "Prionto Hira Deep",
     "description": "Personal portfolio of Prionto Hira Deep — Computer Science & Engineering student, competitive programmer, robotics enthusiast, and visual storyteller based in Chittagong, Bangladesh.",
     "keywords": ["portfolio", "CSE", "competitive programming", "Codeforces", "robotics", "photography", "Bangladesh", "Chittagong"],
-    "ogImage": "/assets/images/avatar.jpg",
+    "ogImage": "/assets/images/avatar.png",
     "canonicalUrl": "https://priontohira.netlify.app",
     "resumePath": "/assets/resume/resume.pdf",
     "resumeLabel": "Download Résumé",
     "themeColor": "#0A0A0B",
-    "favicon": "/assets/icons/favicon.svg"
+    "favicon": "/favicon.svg"
   },
 
   "identity": {
     "name": "Prionto Hira Deep",
     "nameBreak": ["Prionto", "Hira", "Deep"],
-    "avatar": "/assets/images/avatar.jpg",
+    "avatar": "/assets/images/avatar.png",
     "avatarAlt": "Prionto Hira Deep — portrait",
     "taglines": [
       "CSE Student @ CUET",
@@ -29,11 +29,6 @@
     "typingSpeed": 75,
     "deletingSpeed": 40,
     "pauseDelay": 2200,
-    "statusBadge": {
-      "state": "active",
-      "label": "Open to Internships & Collabs",
-      "pulse": true
-    },
     "bio": "I'm a Computer Science & Engineering student at CUET with a deep passion for algorithms, embedded systems, and visual storytelling. I solve problems on Codeforces, build robots that actually move, and photograph light the way a compiler reads source — precisely.",
     "bioHighlight": "algorithms, embedded systems, and visual storytelling"
   },
@@ -77,19 +72,19 @@
     {
       "id": "email",
       "label": "Email",
-      "url": "mailto:chaningdeep@gmail.com ?subject=Portfolio%20Inquiry&body=Hi%20Priyanto,%0D%0A%0D%0AI%20came%20across%20your%20portfolio...",
+      "url": "mailto:chaningdeep@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Prionto,%0D%0A%0D%0AI%20came%20across%20your%20portfolio...",
       "icon": "email",
       "title": "Send a direct email"
     }
   ],
 
   "github": {
-    "username": "priontohira",
+    "username": "prionto-deep",
     "_note": "GitHub username used by api.js to fetch repos, stars, and streak data from the public API."
   },
 
   "codeforces": {
-    "handle": "priontohira",
+    "handle": "Prionyx",
     "_note": "Codeforces handle used by api.js to fetch rating, max rating, solved count, and recent contest history."
   },
 
@@ -448,3 +443,4 @@
     "copyright": "© 2025 Prionto Hira Deep"
   }
 }
+  

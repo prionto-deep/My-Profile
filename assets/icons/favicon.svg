@@ -1,5 +1,243 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="7" fill="#0A0A0B"/>
-  <rect x="1" y="1" width="30" height="30" rx="6.5" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-  <text x="16" y="22" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" fill="#A8B4C8" letter-spacing="-0.5">PT</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- ==================== 1. EMBEDDED ANIMATIONS & STYLES ==================== -->
+    <style>
+      .orbit-cw {
+        transform-origin: 400px 400px;
+        animation: spinCW 28s linear infinite;
+      }
+      .orbit-ccw {
+        transform-origin: 400px 400px;
+        animation: spinCCW 20s linear infinite;
+      }
+      .float-slow {
+        animation: floatY 5s ease-in-out infinite;
+      }
+      .float-delayed {
+        animation: floatY 6s ease-in-out 2.5s infinite;
+      }
+      .pulse-glow {
+        animation: pulseOpacity 3s ease-in-out infinite;
+      }
+      @keyframes spinCW {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes spinCCW {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
+      @keyframes floatY {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+      }
+      @keyframes pulseOpacity {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 0.35; }
+      }
+    </style>
+
+    <!-- ==================== 2. COLOR & LIGHTING GRADIENTS ==================== -->
+    <!-- Deep Space Background -->
+    <radialGradient id="bg-space" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="55%" stop-color="#070b19" />
+      <stop offset="100%" stop-color="#02040a" />
+    </radialGradient>
+
+    <!-- Primary Cyber Cyan-to-Indigo Gradient -->
+    <linearGradient id="cyber-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <!-- Secondary Plasma Magenta-to-Violet Gradient -->
+    <linearGradient id="plasma-accent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <!-- Dark Metallic Armor/Hood Shading -->
+    <linearGradient id="dark-armor" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <!-- Glassmorphic Card Surface -->
+    <linearGradient id="glass-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03" />
+    </linearGradient>
+
+    <!-- Glassmorphic Border Highlight -->
+    <linearGradient id="glass-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.7" />
+    </linearGradient>
+
+    <!-- ==================== 3. GPU POST-PROCESSING FILTERS ==================== -->
+    <!-- Intense Neon Bloom Filter -->
+    <filter id="neon-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Deep 3D Elevation Shadow -->
+    <filter id="elevation-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+
+    <!-- ==================== 4. PATTERNS & MASKS ==================== -->
+    <!-- Repeating Technical Grid Tile -->
+    <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.18" />
+      <circle cx="40" cy="40" r="1.5" fill="#38bdf8" fill-opacity="0.35" />
+    </pattern>
+
+    <!-- Radial Mask to Fade Grid Smoothly -->
+    <radialGradient id="mask-grad" cx="50%" cy="50%" r="48%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="65%" stop-color="#ffffff" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <mask id="grid-fade-mask">
+      <rect width="800" height="800" fill="url(#mask-grad)" />
+    </mask>
+
+    <!-- Master Circular Clip (Optional safety for non-rounded containers) -->
+    <clipPath id="avatar-clip">
+      <rect width="800" height="800" rx="160" ry="160" />
+    </clipPath>
+  </defs>
+
+  <!-- ==================== LAYER 1: BACKGROUND & ATMOSPHERE ==================== -->
+  <g clip-path="url(#avatar-clip)">
+    <!-- Base Space Canvas -->
+    <rect width="800" height="800" fill="url(#bg-space)" />
+
+    <!-- Ambient Nebula Glow Orbs -->
+    <circle cx="260" cy="250" r="220" fill="#0284c7" opacity="0.18" filter="url(#neon-glow)" />
+    <circle cx="550" cy="520" r="240" fill="#9333ea" opacity="0.16" filter="url(#neon-glow)" />
+
+    <!-- Masked Technical Grid -->
+    <rect width="800" height="800" fill="url(#tech-grid)" mask="url(#grid-fade-mask)" />
+
+    <!-- ==================== LAYER 2: ORBITAL HUD RINGS ==================== -->
+    <!-- Outer Telemetry Ring (Clockwise) -->
+    <g class="orbit-cw">
+      <circle cx="400" cy="400" r="340" fill="none" stroke="url(#cyber-cyan)" stroke-width="2" stroke-dasharray="8 16 120 24 4 16 60 40" opacity="0.5" />
+      <circle cx="400" cy="400" r="352" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2 18" opacity="0.3" />
+      <!-- Orbital Node Dots -->
+      <circle cx="400" cy="60" r="5" fill="#00f2fe" filter="url(#neon-glow)" />
+      <circle cx="400" cy="740" r="4" fill="#a855f7" filter="url(#neon-glow)" />
+    </g>
+
+    <!-- Inner Counter-Rotating HUD Ring -->
+    <g class="orbit-ccw">
+      <circle cx="400" cy="400" r="295" fill="none" stroke="url(#plasma-accent)" stroke-width="3" stroke-dasharray="90 45 20 45 140 60" opacity="0.65" filter="url(#neon-glow)" />
+      <circle cx="400" cy="400" r="275" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 12 6 12 6 80" opacity="0.35" />
+    </g>
+
+    <!-- ==================== LAYER 3: 3D ISOMETRIC HEXAGON CORE ==================== -->
+    <!-- Outer Hexagon Frame with Depth Shadow -->
+    <g filter="url(#elevation-shadow)">
+      <polygon points="400,130 634,265 634,535 400,670 166,535 166,265" fill="#090d16" stroke="url(#glass-border)" stroke-width="4" />
+    </g>
+
+    <!-- Inner Glowing Hexagon Circuit -->
+    <polygon points="400,155 612,277 612,523 400,645 188,523 188,277" fill="none" stroke="url(#cyber-cyan)" stroke-width="2" stroke-dasharray="40 15" opacity="0.45" />
+
+    <!-- Geometric Core Backlight -->
+    <circle cx="400" cy="390" r="150" fill="url(#cyber-cyan)" opacity="0.12" filter="url(#neon-glow)" />
+
+    <!-- ==================== LAYER 4: STYLIZED DEVELOPER AVATAR ==================== -->
+    <g class="float-slow" filter="url(#elevation-shadow)">
+      
+      <!-- Shoulders & Cybernetic Jacket Base -->
+      <path d="M 190,640 
+               C 195,515 275,465 400,465 
+               C 525,465 605,515 610,640 
+               L 400,670 Z" fill="url(#dark-armor)" stroke="url(#cyber-cyan)" stroke-width="2.5" />
+
+      <!-- Jacket Collar & Neon Circuit Lapels -->
+      <path d="M 315,472 L 365,585 L 400,555 L 435,585 L 485,472" fill="none" stroke="url(#plasma-accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow)" />
+
+      <!-- Center Chest Core Emblem (Glowing Diamond) -->
+      <polygon points="400,510 422,540 400,570 378,540" fill="url(#cyber-cyan)" filter="url(#neon-glow)" />
+
+      <!-- Outer Sculpted Hood -->
+      <path d="M 400,175 
+               C 285,175 245,270 255,380 
+               C 262,440 300,490 335,510 
+               L 355,465 
+               L 445,465 
+               L 465,510 
+               C 500,490 538,440 545,380 
+               C 555,270 515,175 400,175 Z" fill="url(#dark-armor)" stroke="url(#glass-border)" stroke-width="3" />
+
+      <!-- Hood Inner Shadow Void (Face Recess) -->
+      <path d="M 400,215 
+               C 320,215 292,285 300,370 
+               C 306,435 348,475 400,475 
+               C 452,475 494,435 500,370 
+               C 508,285 480,215 400,215 Z" fill="#030712" stroke="#1e293b" stroke-width="2" />
+
+      <!-- Hood Center Seam Highlight -->
+      <path d="M 400,175 L 400,235" stroke="url(#cyber-cyan)" stroke-width="3" stroke-linecap="round" filter="url(#neon-glow)" />
+
+      <!-- Glowing Cybernetic Visor / Eyes -->
+      <g filter="url(#neon-glow)">
+        <!-- Left Optic -->
+        <polygon points="325,335 385,352 380,368 332,355" fill="#00f2fe" />
+        <!-- Right Optic -->
+        <polygon points="475,335 415,352 420,368 468,355" fill="#00f2fe" />
+        <!-- Visor Center Bridge -->
+        <rect x="394" y="352" width="12" height="5" rx="2" fill="#ec4899" />
+      </g>
+
+      <!-- Subtle Digital Face Contour Lines -->
+      <path d="M 340,395 L 375,425 L 425,425 L 460,395" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.4" />
+    </g>
+
+    <!-- ==================== LAYER 5: GLASSMORPHIC FOREGROUND NODES ==================== -->
+    <!-- Left Floating Code Badge (< />) -->
+    <g class="float-delayed" filter="url(#elevation-shadow)">
+      <rect x="115" y="340" width="135" height="84" rx="18" fill="url(#glass-surface)" stroke="url(#glass-border)" stroke-width="2" />
+      <!-- Code Brackets < / > -->
+      <g fill="none" stroke="url(#cyber-cyan)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#neon-glow)">
+        <polyline points="158,368 140,382 158,396" />
+        <line x1="190" y1="364" x2="175" y2="400" stroke="url(#plasma-accent)" />
+        <polyline points="207,368 225,382 207,396" />
+      </g>
+    </g>
+
+    <!-- Right Floating Terminal Status Node -->
+    <g class="float-slow" filter="url(#elevation-shadow)">
+      <rect x="550" y="250" width="145" height="76" rx="16" fill="url(#glass-surface)" stroke="url(#glass-border)" stroke-width="2" />
+      <!-- Window Control Dots -->
+      <circle cx="572" cy="270" r="4.5" fill="#ec4899" />
+      <circle cx="588" cy="270" r="4.5" fill="#f59e0b" />
+      <circle cx="604" cy="270" r="4.5" fill="#10b981" />
+      <!-- Abstract Code Bars -->
+      <rect x="568" y="288" width="75" height="6" rx="3" fill="url(#cyber-cyan)" class="pulse-glow" />
+      <rect x="568" y="302" width="105" height="6" rx="3" fill="#94a3b8" opacity="0.45" />
+    </g>
+
+    <!-- ==================== LAYER 6: FOREGROUND PARTICLES & RIM FRAME ==================== -->
+    <circle cx="220" cy="200" r="3" fill="#00f2fe" class="pulse-glow" filter="url(#neon-glow)" />
+    <circle cx="590" cy="460" r="4" fill="#ec4899" class="pulse-glow" filter="url(#neon-glow)" />
+    <circle cx="260" cy="560" r="2.5" fill="#38bdf8" opacity="0.7" />
+
+    <!-- Master Outer Circular Avatar Ring (Perfect for 1:1 Profile Crop) -->
+    <circle cx="400" cy="400" r="380" fill="none" stroke="url(#glass-border)" stroke-width="4" opacity="0.6" />
+  </g>
 </svg>
