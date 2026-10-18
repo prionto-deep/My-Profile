@@ -166,17 +166,31 @@ async function boot() {
   // 3. Apply SEO meta
   applySEOMeta(profile.meta);
 
-  // 4. Render all sections synchronously (except stats which is async)
-  renderHero(profile);
-  renderProjects(profile);
-  renderIdeas(profile);
-  renderTimeline(profile);
-  renderMap(profile);
-  renderContact(profile);
-  renderFooter(profile);
+  // 4. Render all sections defensively so a failure in one never crashes the app
+  const renderers = [
+    ['hero', renderHero],
+    ['projects', renderProjects],
+    ['ideas', renderIdeas],
+    ['timeline', renderTimeline],
+    ['map', renderMap],
+    ['contact', renderContact],
+    ['footer', renderFooter],
+  ];
+
+  for (const [name, fn] of renderers) {
+    try {
+      fn(profile);
+    } catch (err) {
+      console.error(`[app.js] Error rendering ${name}:`, err);
+    }
+  }
 
   // 5. Stats are async — skeleton shown immediately inside renderStats
-  renderStats(profile); // intentionally not awaited
+  try {
+    renderStats(profile);
+  } catch (err) {
+    console.error('[app.js] Error initiating stats:', err);
+  }
 
   // 6. Wire scroll interactions
   initScrollReveal();

@@ -151,9 +151,9 @@ export function renderHero(profile) {
     });
   }
 
-  // Social bar
+  // Social bar (preserve static HTML anchor tags if already present)
   const socialEl = document.getElementById('social-bar');
-  if (socialEl && social?.length) {
+  if (socialEl && !socialEl.children.length && social?.length) {
     socialEl.innerHTML = social.map((s) => {
       const href = normalizeSocialUrl(s.url);
       const isEmail = s.id === 'email' || href.startsWith('mailto:');
