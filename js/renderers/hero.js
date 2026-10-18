@@ -12,6 +12,22 @@ const SOCIAL_ICONS = {
   email: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
 };
 
+// Fallback icon for unknown social types
+const FALLBACK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20M2 12h20"/></svg>`;
+
+/**
+ * Normalizes a social URL so it is never treated as a relative path by the browser.
+ * On Netlify, missing protocol causes relative path appending to the Netlify domain.
+ */
+function normalizeSocialUrl(url) {
+  if (!url || typeof url !== 'string') return '#';
+  const trimmed = url.trim();
+  if (/^(https?:\/\/|mailto:|tel:)/i.test(trimmed)) {
+    return trimmed;
+  }
+  return `https://${trimmed}`;
+}
+
 // ── Typing effect ─────────────────────────────────────────────
 function initTypingEffect(taglines, { typingSpeed = 75, deletingSpeed = 40, pauseDelay = 2200 } = {}) {
   const el = document.getElementById('tagline-text');
@@ -138,23 +154,28 @@ export function renderHero(profile) {
   // Social bar
   const socialEl = document.getElementById('social-bar');
   if (socialEl && social?.length) {
-    socialEl.innerHTML = social.map((s) => `
+    socialEl.innerHTML = social.map((s) => {
+      const href = normalizeSocialUrl(s.url);
+      const isEmail = s.id === 'email' || href.startsWith('mailto:');
+      const iconMarkup = SOCIAL_ICONS[s.icon] || FALLBACK_ICON;
+      return `
       <a
-        href="${s.url}"
+        href="${href}"
         class="social-link"
         id="social-${s.id}"
-        target="${s.id === 'email' ? '_self' : '_blank'}"
-        rel="${s.id === 'email' ? '' : 'noopener noreferrer'}"
-        title="${s.title}"
+        target="${isEmail ? '_self' : '_blank'}"
+        rel="${isEmail ? '' : 'noopener noreferrer'}"
+        title="${s.title || s.label}"
         aria-label="${s.label}"
       >
         <span class="social-icon" aria-hidden="true">
-          ${SOCIAL_ICONS[s.icon] || ''}
+          ${iconMarkup}
         </span>
         <span class="social-link-label">${s.label}</span>
         <span class="social-link-arrow" aria-hidden="true">↗</span>
       </a>
-    `).join('');
+    `;
+    }).join('');
   }
 
   // Skills

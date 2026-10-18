@@ -649,6 +649,8 @@ h1, h2, h3, h4 {
   flex-direction: column;
   gap: var(--sp-2);
   flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .social-link {
@@ -660,6 +662,11 @@ h1, h2, h3, h4 {
   border-radius: var(--radius-sm);
   transition: all var(--dur-fast) var(--ease-out);
   color: var(--text-secondary);
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .social-link:hover {
